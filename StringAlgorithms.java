@@ -1,87 +1,81 @@
 public class StringAlgorithms {
-
-    /**
-     * Challenge 1:
-     * Write a method that takes a String 'word' and returns
-     * a String where each character is placed on its own line.
-     */
-    public static String printCharacters(String word) {
-        // TODO: Implement this method
+    private static boolean a;
+    public static String printCharacters(String word){
+        int num = word.length();
+        for (int p = 0; p < num; p++) {
+           System.out.println(word.substring(p,p+1));
+           
+        }
         return "";
     }
-
-
-    /**
-     * Challenge 2:
-     * Write a method that takes a String 'word' and returns
-     * a new String with the characters reversed.
-     */
-    public static String reverseWord(String word) {
-        // TODO: Implement this method
+     public static String reverseWord(String word) {
+        int num = word.length();
+        for (int p = 0; p < num; num--) {
+           System.out.print(word.substring(num-1,num));
+        }
         return "";
     }
-
-
-    /**
-     * Challenge 3:
-     * Write a method that takes a String 'sentence' and returns
-     * the sentence with the first letter of each word capitalized.
-     */
+    public static String firstUniqueChar(String word){
+      int i = 0;
+      while (i < word.length()) {
+         String c = word.substring(i, i + 1);
+         if (word.indexOf(c) == word.lastIndexOf(c)) {
+              System.out.println(c);
+              i += 4000;
+              }
+         i++;
+     
+    }
+    return " ";    
+    
+    }
     public static String capitalizeString(String sentence) {
-        // TODO: Implement this method
+      String result = "";
+      int i = 0;
+      while (i < sentence.length()) {
+         while (i < sentence.length() && sentence.substring(i, i + 1).equals(" ")) {
+         result += " ";
+         i++;
+         }
+         if (i < sentence.length()) {
+                     
+         result += sentence.substring(i, i + 1).toUpperCase();
+         i++;
+         }          
+         while (i < sentence.length() && !sentence.substring(i, i + 1).equals(" ")) {
+            result += sentence.substring(i, i + 1);
+            i++;
+            
+         }
+      }
+      System.out.println(result);
+      return "";
+    }
+    public static String detectPalindrome(String word) {
+      public static String pitorWord(String word) {
+        int num = word.length();
+        for (int p = 0; p < num; num--) {
+           System.out.print(word.substring(num-1,num));
+        }
         return "";
+                              
+        System.out.print(word.equals(reversed));
+      return "";
     }
-
-
-    /**
-     * Challenge 4:
-     * Write a method that takes a String 'word' and returns true
-     * if the word is a palindrome (ignoring case), false otherwise.
-     */
-    public static boolean detectPalindrome(String word) {
-        // TODO: Implement this method
-        return false;
-    }
-
-
-    /**
-     * Challenge 5:
-     * Write a method that takes a String 'word' and returns the
-     * first character that appears exactly once. If no such
-     * character exists, return a space ' '.
-     */
-    public static char firstUniqueChar(String word) {
-        // TODO: Implement this method
-        return ' ';
-    }
-
-
-    /**
-     * Main method:
-     * Test each method at least once.
-     */
+    
     public static void main(String[] args) {
-
-        // TODO: Add test calls for each challenge method
-        
         System.out.println("Testing printCharacters:");
-        // Example:
-        // System.out.println(printCharacters("hello"));
-
-        System.out.println("\nTesting reverseWord:");
-        // Example:
-        // System.out.println(reverseWord("hello"));
-
-        System.out.println("\nTesting capitalizeString:");
-        // Example:
-        // System.out.println(capitalizeString("the quick brown fox"));
-
+        printCharacters("hello");
+        System.out.println("Testing reverse word:");
+        reverseWord("madam");
         System.out.println("\nTesting detectPalindrome:");
-        // Example:
-        // System.out.println(detectPalindrome("racecar"));
-
+        detectPalindrome("madam");
+        System.out.println("\nTesting capitalizeString:");
+        capitalizeString("the cat is bothering me");
         System.out.println("\nTesting firstUniqueChar:");
-        // Example:
-        // System.out.println(firstUniqueChar("swiss"));
+        firstUniqueChar("rapper");
+        // i got all except detect palindrome it sucks
+        
+        
     }
 }
